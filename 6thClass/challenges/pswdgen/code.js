@@ -24,6 +24,7 @@ let promptUser = (response) => {
     };
     return responses;
 };
+
 const specialCharacters = [
     "@",
     "%",
@@ -119,7 +120,18 @@ let creatPassword = () => {
             `please make the following changes to your slections:\n${errorList}`
         );
     } else if (validResponse === true) {
-        assemblePassword();
+        //create object containing all of our values
+        let characters = {
+            useSpecials: specialCharacters,
+            useUpper: upperCase,
+            useLower: lowerCases,
+            useNumbers: numbers,
+        };
+        //create an array containing all the parameters slected
+        let masterArr = assembleArr(responses, characters);
+        //randomly select from the array to generate the password
+        let password = assemblePassword(masterArr, responses.length);
+        return password;
     }
 };
 let validator = (responses, errorList) => {
@@ -130,7 +142,6 @@ let validator = (responses, errorList) => {
         parseInt(responses.length) < 8 ||
         responses.length == null
     ) {
-        console.log("error");
         errorList.push(
             ` password cannot be ${responses.length} characters long please choose a password  between 8 and 128 characters long`
         );
@@ -154,6 +165,30 @@ let validator = (responses, errorList) => {
         return true;
     }
 };
-let assemblePassword = (arr) => {};
+let assembleArr = (responses, characters) => {
+    let arr = [];
+    let keys = Object.keys(responses);
 
-creatPassword();
+    keys.map((i) => {
+        if (responses[i] === true) {
+            arr.push(characters[i]);
+        }
+    });
+    return arr;
+};
+let assemblePassword = (arr, length) => {
+    let password = [];
+    let j;
+    let k;
+    for (i = 0; i < length; i++) {
+        j = Math.floor(Math.random() * arr.length);
+        k = Math.floor(Math.random() * arr[j].length);
+        password.push(arr[j][k]);
+    }
+    password = password.join(``);
+
+    return password;
+};
+
+let password = creatPassword();
+alert(`your pass word is ${password}`);
