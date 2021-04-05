@@ -1,4 +1,4 @@
-let promptUser = (response) => {
+let promptUser = () => {
     const length = prompt(
         `what length of password woudl you like? Password must be between 8 and 128 characters`
     );
@@ -24,8 +24,6 @@ let promptUser = (response) => {
     };
     return responses;
 };
-
-//start logic
 let creatPassword = () => {
     //get password criteria
     let responses = promptUser();
@@ -186,5 +184,9 @@ let assemblePassword = (arr, length) => {
     return password;
 };
 
-let password = creatPassword();
-alert(`your password is ${password}`);
+//--------------EVENT LISTENERS----------------------------
+document.getElementById("passwordGen").addEventListener("click", function () {
+    let password = creatPassword();
+
+    alert(`your password is ${password}`);
+});
