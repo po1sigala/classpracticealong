@@ -35,6 +35,7 @@ let creatPassword = () => {
         alert(
             `please make the following changes to your slections:\n${errorList}`
         );
+        return false;
     } else if (validResponse === true) {
         //create object containing all of our values
         let characters = {
@@ -187,6 +188,9 @@ let assemblePassword = (arr, length) => {
 //--------------EVENT LISTENERS----------------------------
 document.getElementById("passwordGen").addEventListener("click", function () {
     let password = creatPassword();
-
-    alert(`your password is ${password}`);
+    if (password === false) {
+        return;
+    } else {
+        alert(`your password is ${password}`);
+    }
 });
