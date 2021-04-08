@@ -19,6 +19,7 @@ function countdown() {
         if (timeLeft === 0 || timeLeft < 0) {
             console.log("done");
             clearInterval(timeInterval);
+            displayMessage();
         }
     }, 1000);
 }
