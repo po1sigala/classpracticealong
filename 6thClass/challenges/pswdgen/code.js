@@ -185,6 +185,16 @@ let assemblePassword = (arr, length) => {
     return password;
 };
 
+let whatsChecked = (arr) => {
+    const checkedButton = [];
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i].checked === true) {
+            checkedButton.push(arr[i].id);
+        }
+    }
+
+    return checkedButton;
+};
 //--------------EVENT LISTENERS----------------------------
 document.getElementById("passwordGen").addEventListener("click", function () {
     let password = creatPassword();
@@ -194,3 +204,16 @@ document.getElementById("passwordGen").addEventListener("click", function () {
         alert(`your password is ${password}`);
     }
 });
+document
+    .getElementById("radioGenerate")
+    .addEventListener("click", function (event) {
+        event.preventDefault();
+
+        let length = parseInt(document.getElementById("length").value);
+        let buttons = document.getElementsByClassName("radios");
+        let clicked = whatsChecked(buttons);
+
+        console.log(
+            `clicked. buttons selected are ${clicked} and length entered is ${length}`
+        );
+    });

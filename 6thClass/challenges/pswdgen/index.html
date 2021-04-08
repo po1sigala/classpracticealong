@@ -12,7 +12,7 @@
 <body>
     <div class="flex-container">
         <div class="flex-row header"></div>
-        <div class="flex-row body" id="Describtion">
+        <div class="flex-row body" id="Description">
             <div class="flex-content text">
 
                 <h1>Flexbox is Fun</h1>
@@ -23,16 +23,41 @@
             <div class="flex-content column descriptors">
                 <p>to the right are a few vanilla JS porjects using mpas, timeouts, promises, for loops, and other common JS tools</p>
             </div>
-            <Div class="flex-content column subjects">
-                <div class="subgroup">
+            <div class="flex-content column subjects ">
+                <div class="">
                     <h2>Secure Password</h2>
                     <p>clicking the below button will generate a secure password for you using alerts to poll you on what type of characters you woudl like your password to use</p>
                 </div>
                 <form>
-                    <label for ="passwordGen"> using alerts</label>
-                    <input type="button" id="passwordGen" value="generate">
+                    <div class="subGroup">
+                        <label for ="passwordGen"> <h3>Generate a password using alerts</h3></label><br>
+                        <input type="button" id="passwordGen" value="generate">
+                    </div>
+                    <div class="subGroup">
+                        <h3>Generate a password using radios and displaying in html</h3>
+                        <div class=""> 
+                            <label for= "length">password length</label>
+                            <input type="text"  id="length">
+                        </div>
+                       
+                        <div class= "">
+                            <input type="radio"  id="upperBtn" class="radios">
+                            <label for= "upperBtn"> UpperCase</label>
+                            <input type="radio"  id="lowerBtn" class="radios">
+                            <label for= "lowerBtn"> LowerCase</label>
+                            <input type="radio"  id="numberBtn" class="radios">
+                            <label for= "numberBtn">Numbers</label>
+                            <input type="radio"  id="SpecialBtn" class="radios">
+                            <label for= "SpecialBtn">Special Characters</label>
+                           
+                        </div>
+                        <div>
+                            <button id="radioGenerate">Generate</button>
+                        </div>
+                    </div>
                 </form>
-            </Div>
+
+            </div>
            
            
         </div>
