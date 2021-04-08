@@ -10,10 +10,11 @@ var words = message.split(" ");
 function countdown() {
     console.log("countign down");
     var timeLeft = 5;
-
+    timerEl.textContent = timeLeft;
     // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
         timeLeft--;
+        timerEl.textContent = timeLeft;
         console.log(timeLeft);
         if (timeLeft === 0 || timeLeft < 0) {
             console.log("done");
