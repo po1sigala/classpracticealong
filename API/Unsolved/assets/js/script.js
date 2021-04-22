@@ -13,10 +13,11 @@ myFunction = () => {
     //
     let API = "HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1";
     fetch(
-        `https://api.giphy.com/v1/gifs/search?q=` +
-            searchTerm +
-            "&api_key=" +
-            API
+        // `https://api.giphy.com/v1/gifs/search?q=` +
+        //     searchTerm +
+        //     "&api_key=" +
+        //     API
+        `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API}`
     )
         .then(function (response) {
             return response.json();
