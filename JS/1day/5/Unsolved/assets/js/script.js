@@ -1,5 +1,5 @@
 // TODO: Create an array with five question objects
-
+const questions = ["whats your name", ""];
 // TODO: Create a variable to keep track of the score
 
 // TODO: Iterate over the questions array and display each question in a confirmation box

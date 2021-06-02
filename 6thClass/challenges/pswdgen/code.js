@@ -217,3 +217,13 @@ document
             `clicked. buttons selected are ${clicked} and length entered is ${length}`
         );
     });
+
+pasword = [];
+
+var masterarray = [];
+
+for (i = 0; i < passwordLength; i++) {
+    var randomselector;
+
+    pasword.push(masterarray[randomselector]);
+}
